@@ -15,7 +15,7 @@ RSpec.describe "dchef's show page", type: :feature do
       visit "/chef/#{chef1.id}"
       expect(page).to have_content(chef1.name)
       expect(page).to_not have_content(chef2.name)
-      click_link "View Ingredients"
+      click_link "Ingredients"
       expect(page).to have_content(ingredient1.name)
       expect(page).to have_content(ingredient2.name)
       expect(page).to_not have_content(ingredient3.name)
