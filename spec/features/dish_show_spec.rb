@@ -6,8 +6,8 @@ RSpec.describe "dish's show page", type: :feature do
 
       chef1 = Chef.create!(name: "Matt")
       dish1 = chef1.dishes.create!(name: "Grilled Cheese", description: "Tasty")
-      # ingredient1 = dish1.ingredients.create!(name: "Bread")
-      # ingredient2 = dish1.ingredients.create!(name: "Cheese")
+      ingredient1 = dish1.ingredients.create!(name: "Bread", calories: 40)
+      ingredient2 = dish1.ingredients.create!(name: "Cheese", calories: 60)
 
       visit "/dish/#{dish1.id}"
       expect(page).to have_content(dish1.name)
